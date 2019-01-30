@@ -1,0 +1,32 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-airline/vim-airline' 
+Bundle 'kien/ctrlp.vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'easymotion/vim-easymotion'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'mxw/vim-jsx'
+Bundle 'thaerkh/vim-workspace'
+Bundle 'mbbill/undotree'
+Bundle 'mattn/webapi-vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'posva/vim-vue'
+
+call vundle#end()
+filetype on
