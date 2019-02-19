@@ -11,22 +11,45 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-airline/vim-airline' 
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'easymotion/vim-easymotion'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'mxw/vim-jsx'
-Bundle 'thaerkh/vim-workspace'
-Bundle 'mbbill/undotree'
-Bundle 'mattn/webapi-vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'posva/vim-vue'
+" General {
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'flazz/vim-colorschemes'
+    Bundle 'tpope/vim-surround'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'vim-airline/vim-airline'
+    Bundle 'mbbill/undotree'
+    Bundle 'easymotion/vim-easymotion'
+    Bundle 'terryma/vim-multiple-cursors'
+" }
+
+" General Programming {
+    Bundle 'scrooloose/syntastic'
+    Bundle 'thaerkh/vim-workspace'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'godlygeek/tabular'
+    Bundle 'townk/vim-autoclose'
+    Bundle 'editorconfig/editorconfig-vim'
+    if executable('ctags')
+        Bundle 'majutsushi/tagbar'
+    endif
+" }
+
+" Snippets & AutoComplete {
+    Bundle 'valloric/youcompleteme'
+" }
+
+" Front end develep {
+    Bundle 'mattn/emmet-vim'
+    Bundle 'pangloss/vim-javascript'
+    Bundle 'mxw/vim-jsx'
+    Bundle 'mattn/webapi-vim'
+    Bundle 'othree/javascript-libraries-syntax.vim'
+    Bundle 'posva/vim-vue'
+    Bundle 'amirh/HTML-AutoCloseTag'
+    Bundle 'hail2u/vim-css3-syntax'
+    Bundle 'gorodinskiy/vim-coloresque'
+    Bundle 'cakebaker/scss-syntax.vim'
+" }
 
 call vundle#end()
 filetype on
