@@ -64,6 +64,17 @@ filetype plugin indent on
 
     " javascript-libraries-syntax
     let g:used_javascript_libs = 'underscore,vue'
+
+    " emmet
+    let g:user_emmet_leader_key = '<C-j>'
+
+    " youcomplete
+    let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+    let g:SuperTabDefaultCompletionType = '<C-n>'
+
+    " UltiSnips
+    let g:UltiSnipsExpandTrigger = "<C-s>"
 " }
 
 
