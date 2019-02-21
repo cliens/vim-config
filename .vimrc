@@ -4,7 +4,7 @@ set nocompatible
     let mapleader=","
     syntax on
     set number
-    " set cursorline
+    set shiftwidth=4
 " }
 
 
@@ -13,7 +13,7 @@ set nocompatible
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     nnoremap <leader>sv :source $MYVIMRC<cr>
     inoremap jk <Esc>
-    inoremap <Esc> <Nop>
+    vnoremap jk <Esc>
     nnoremap <leader>g :grep -R <cWORD> .<cr>
 " }
 
@@ -66,7 +66,7 @@ filetype plugin indent on
     let g:used_javascript_libs = 'underscore,vue'
 
     " emmet
-    let g:user_emmet_leader_key = '<C-j>'
+    let g:user_emmet_leader_key = '<C-y>'
 
     " youcomplete
     let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -75,7 +75,29 @@ filetype plugin indent on
 
     " UltiSnips
     let g:UltiSnipsExpandTrigger = "<C-s>"
-" }
+
+    " nerdcommter
+    let g:ft = ''
+    fu! NERDCommenter_before()
+	if &ft == 'vue'
+	    let g:ft = 'vue'
+	    let stack = synstack(line('.'), col('.'))
+	    if len(stack) > 0
+		let syn = synIDattr((stack)[0], 'name')
+		if len(syn) > 0
+		    let syn = tolower(syn)
+		    exe 'setf '.syn
+		endif
+	    endif
+	endif
+    endfu
+    fu! NERDCommenter_after()
+	if g:ft == 'vue'
+	    setf vue
+	    g:ft
+	endif
+    endfu
+    " }
 
 
 
