@@ -33,9 +33,11 @@ Bundle 'gmarik/vundle'
     Bundle 'honza/vim-snippets'
     Bundle 'mileszs/ack.vim'
     Bundle 'airblade/vim-gitgutter'
+    Bundle 'suan/vim-instant-markdown'
     if executable('ctags')
         Bundle 'majutsushi/tagbar'
     endif
+    Bundle 'rizzatti/dash.vim'
 " }
 
 " Snippets & AutoComplete {
