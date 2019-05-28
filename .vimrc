@@ -4,7 +4,7 @@ set nocompatible
     let mapleader=","
     syntax on
     set number
-    set shiftwidth=4
+    set shiftwidth=2
 " }
 
 
@@ -44,7 +44,7 @@ filetype plugin indent on
 
     " nerdtree
     noremap <C-e> :NERDTreeToggle<CR>
-    let NERDTreeNodeDelimiter="\u00a0"
+    let NERDTreeNodeDelimiter = "\u00a0"
 
     " colorschemes
     colorscheme molokai_dark
@@ -52,6 +52,7 @@ filetype plugin indent on
     " workspace
     nnoremap <leader>s :ToggleWorkspace<cr>
     let g:workspace_autosave_always = 1
+    let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 
     " vim-vue
     augroup file_vue
@@ -72,8 +73,18 @@ filetype plugin indent on
     " undotree
     noremap <C-h> :UndotreeToggle<CR>
 
+    if has("persistent_undo") " persistent undo
+      set undodir=$HOME."/.undodir"
+      set undofile
+    endif
+
     " tagbar
     nnoremap <leader>t :TagbarToggle<cr>
+
+    " Ack
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+    nnoremap <leader>a :Ack!<CR>
+    nnoremap<leader>A :Ack!<Space>
 
     " javascript-libraries-syntax
     let g:used_javascript_libs = 'underscore,vue'
@@ -87,10 +98,19 @@ filetype plugin indent on
     let g:SuperTabDefaultCompletionType = '<C-n>'
 
     " UltiSnips
-    let g:UltiSnipsExpandTrigger = "<C-s>"
+    let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+    let g:UltiSnipsExpandTrigger="<C-j>"
+    let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
     "airblade/vim-gitgutter
     set updatetime=100
+
+    "vim-prettier
+    nnoremap <leader>p :PrettierAsync<CR>
+    let g:prettier#config#semi = 'false'
+    let g:prettier#config#trailing_comma = 'none'
+
 
     " nerdcommter
     let g:NERDSpaceDelims = 1

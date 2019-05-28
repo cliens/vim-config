@@ -38,6 +38,7 @@ Bundle 'gmarik/vundle'
         Bundle 'majutsushi/tagbar'
     endif
     Bundle 'rizzatti/dash.vim'
+    Bundle 'oblitum/rainbow'
 " }
 
 " Snippets & AutoComplete {
@@ -55,6 +56,20 @@ Bundle 'gmarik/vundle'
     Bundle 'gorodinskiy/vim-coloresque'
     Bundle 'cakebaker/scss-syntax.vim'
     Bundle 'leafgarland/typescript-vim'
+    Bundle 'prettier/vim-prettier', {
+	  \ 'do': 'yarn install',
+	  \ 'branch': 'release/1.x',
+	  \ 'for': [
+	  \ 'javascript',
+	  \ 'typescript',
+	  \ 'css',
+	  \ 'less',
+	  \ 'scss',
+	  \ 'json',
+	  \ 'graphql',
+	  \ 'markdown',
+	  \ 'vue',
+	  \ 'html'] }
 " }
 
 call vundle#end()
