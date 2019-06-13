@@ -17,9 +17,10 @@ Bundle 'gmarik/vundle'
     Bundle 'tpope/vim-surround'
     Bundle 'kien/ctrlp.vim'
     Bundle 'vim-airline/vim-airline'
-    Bundle 'mbbill/undotree'
+    Bundle 'simnalamburt/vim-mundo'
     Bundle 'easymotion/vim-easymotion'
     Bundle 'terryma/vim-multiple-cursors'
+    Bundle 'kshenoy/vim-signature'
 " }
 
 " General Programming {

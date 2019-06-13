@@ -15,6 +15,7 @@ set nocompatible
     inoremap fd <Esc>
     vnoremap fd <Esc>
     nnoremap <leader>g :grep -R <cWORD> .<cr>
+    nnoremap <leader>q :q<cr>
 
     " Disdabled default keys
     noremap <Up> \<Nop>
@@ -24,6 +25,8 @@ set nocompatible
     noremap <Del> \<Nop>
     noremap <Bslash> \<Nop>
     noremap <Esc> \<Nop>
+    " Disable lowercase conversion of visiual mode to prevent misopration
+    vnoremap u \<nop>
 " }
 
 
@@ -70,12 +73,12 @@ filetype plugin indent on
 		\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 		\ }
 
-    " undotree
-    noremap <C-h> :UndotreeToggle<CR>
+    " mundo
+    noremap <C-h> :MundoToggle<CR>
 
     if has("persistent_undo") " persistent undo
-      set undodir=$HOME."/.undodir"
       set undofile
+      set undodir=~/.vim/undo
     endif
 
     " tagbar
@@ -110,6 +113,7 @@ filetype plugin indent on
     nnoremap <leader>p :PrettierAsync<CR>
     let g:prettier#config#semi = 'false'
     let g:prettier#config#trailing_comma = 'none'
+    let g:prettier#config#bracket_spacing = 'true'
 
 
     " nerdcommter
