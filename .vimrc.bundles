@@ -30,8 +30,6 @@ Bundle 'gmarik/vundle'
     Bundle 'godlygeek/tabular'
     Bundle 'townk/vim-autoclose'
     Bundle 'editorconfig/editorconfig-vim'
-    Bundle 'SirVer/ultisnips'
-    Bundle 'honza/vim-snippets'
     Bundle 'mileszs/ack.vim'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'suan/vim-instant-markdown'
@@ -40,9 +38,13 @@ Bundle 'gmarik/vundle'
     endif
     Bundle 'rizzatti/dash.vim'
     Bundle 'oblitum/rainbow'
+    Bundle 'ludovicchabant/vim-gutentags'
+    Bundle 'junegunn/vim-easy-align'
 " }
 
 " Snippets & AutoComplete {
+    Bundle 'SirVer/ultisnips'
+    Bundle 'honza/vim-snippets'
     Bundle 'valloric/youcompleteme'
 " }
 

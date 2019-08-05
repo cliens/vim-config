@@ -5,6 +5,7 @@ set nocompatible
     syntax on
     set number
     set shiftwidth=2
+    set clipboard=unnamed
 " }
 
 
@@ -44,6 +45,9 @@ filetype plugin indent on
 
     " syntastic
     let g:syntastic_javascript_checkers = ['eslint']
+
+    " easymotion
+    map <Leader> <Plug>(easymotion-prefix)
 
     " nerdtree
     noremap <C-e> :NERDTreeToggle<CR>
@@ -109,11 +113,23 @@ filetype plugin indent on
     "airblade/vim-gitgutter
     set updatetime=100
 
+    " instant-markdown
+    "let g:instant_markdown_autostart = 0
+
     "vim-prettier
     nnoremap <leader>p :PrettierAsync<CR>
     let g:prettier#config#semi = 'false'
     let g:prettier#config#trailing_comma = 'none'
     let g:prettier#config#bracket_spacing = 'true'
+
+    " vim-gutentags
+    let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+    let s:vim_tags = expand('~/.vim/tags')
+    let g:gutentags_cache_dir = s:vim_tags
+    if !isdirectory(s:vim_tags)
+      silent! call mkdir(s:vim_tags, 'p')
+    endif
+    let g:gutentags_file_list_command = 'rg --files'
 
 
     " nerdcommter
