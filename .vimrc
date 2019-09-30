@@ -78,12 +78,12 @@ filetype plugin indent on
 		\ }
 
     " mundo
-    noremap <C-h> :MundoToggle<CR>
+    " noremap <C-h> :MundoToggle<CR>
 
-    if has("persistent_undo") " persistent undo
-      set undofile
-      set undodir=~/.vim/undo
-    endif
+    " if has("persistent_undo") " persistent undo
+      " set undofile
+      " set undodir=~/.vim/undo
+    " endif
 
     " tagbar
     nnoremap <leader>t :TagbarToggle<cr>
@@ -123,13 +123,13 @@ filetype plugin indent on
     let g:prettier#config#bracket_spacing = 'true'
 
     " vim-gutentags
-    let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-    let s:vim_tags = expand('~/.vim/tags')
-    let g:gutentags_cache_dir = s:vim_tags
-    if !isdirectory(s:vim_tags)
-      silent! call mkdir(s:vim_tags, 'p')
-    endif
-    let g:gutentags_file_list_command = 'rg --files'
+    " let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+    " let s:vim_tags = expand('~/.vim/tags')
+    " let g:gutentags_cache_dir = s:vim_tags
+    " if !isdirectory(s:vim_tags)
+      " silent! call mkdir(s:vim_tags, 'p')
+    " endif
+    " let g:gutentags_file_list_command = 'rg --files'
 
 
     " nerdcommter
