@@ -13,6 +13,7 @@ Personal vim config
 - [x] [vim-easymotion](https://github.com/easymotion/vim-easymotion)
 - [x] [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 - [x] [vim-signature](https://github.com/kshenoy/vim-signature)
+- [x] [vim-searchindex](https://github.com/google/vim-searchindex)
 
 ##### General Programing
 - [x] [syntastic](https://github.com/vim-syntastic/syntastic)

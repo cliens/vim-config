@@ -21,6 +21,7 @@ Bundle 'gmarik/vundle'
     Bundle 'easymotion/vim-easymotion'
     Bundle 'terryma/vim-multiple-cursors'
     Bundle 'kshenoy/vim-signature'
+    Bundle 'google/vim-searchindex'
 " }
 
 " General Programming {
