@@ -48,4 +48,6 @@ Personal vim config
 - [x] [scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim)
 - [ ] [typescript-vim](https://github.com/leafgarland/typescript-vim)
 - [x] [vim-prettier](https://github.com/prettier/vim-prettier)
+- [x] [wavded/vim-stylus](https://github.com/wavded/vim-stylus)
+- [x] [heavenshell/vim-jsdoc](https://github.com/heavenshell/vim-jsdoc)
 
