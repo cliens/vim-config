@@ -118,7 +118,7 @@ filetype plugin indent on
 
     "vim-prettier
     nnoremap <leader>p :PrettierAsync<CR>
-    let g:prettier#config#semi = 'false'
+    let g:prettier#config#semi = 'true'
     let g:prettier#config#trailing_comma = 'none'
     let g:prettier#config#bracket_spacing = 'true'
 
@@ -130,6 +130,12 @@ filetype plugin indent on
       " silent! call mkdir(s:vim_tags, 'p')
     " endif
     " let g:gutentags_file_list_command = 'rg --files'
+
+    " jsdoc
+    let g:jsdoc_allow_input_prompt = 0
+    let g:jsdoc_input_description = 1
+    let g:jsdoc_enable_es6 = 1
+    nnoremap <leader>d :JsDoc<cr>
 
 
     " nerdcommter
