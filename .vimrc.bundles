@@ -9,60 +9,60 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " General {
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'flazz/vim-colorschemes'
-    Bundle 'tpope/vim-surround'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'vim-airline/vim-airline'
-    " Bundle 'simnalamburt/vim-mundo'
-    Bundle 'easymotion/vim-easymotion'
-    Bundle 'terryma/vim-multiple-cursors'
-    Bundle 'kshenoy/vim-signature'
-    Bundle 'google/vim-searchindex'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'flazz/vim-colorschemes'
+    Plugin 'tpope/vim-surround'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'vim-airline/vim-airline'
+    " Plugin 'simnalamburt/vim-mundo'
+    Plugin 'easymotion/vim-easymotion'
+    Plugin 'terryma/vim-multiple-cursors'
+    Plugin 'kshenoy/vim-signature'
+    Plugin 'google/vim-searchindex'
 " }
 
 " General Programming {
-    Bundle 'scrooloose/syntastic'
-    Bundle 'thaerkh/vim-workspace'
-    Bundle 'scrooloose/nerdcommenter'
-    Bundle 'godlygeek/tabular'
-    Bundle 'townk/vim-autoclose'
-    Bundle 'editorconfig/editorconfig-vim'
-    Bundle 'mileszs/ack.vim'
-    Bundle 'airblade/vim-gitgutter'
-    Bundle 'suan/vim-instant-markdown'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'thaerkh/vim-workspace'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'godlygeek/tabular'
+    Plugin 'townk/vim-autoclose'
+    " Plugin 'editorconfig/editorconfig-vim'
+    Plugin 'mileszs/ack.vim'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'suan/vim-instant-markdown'
     if executable('ctags')
-        Bundle 'majutsushi/tagbar'
+        Plugin 'majutsushi/tagbar'
     endif
-    Bundle 'rizzatti/dash.vim'
-    Bundle 'oblitum/rainbow'
-    " Bundle 'ludovicchabant/vim-gutentags'
-    " Bundle 'junegunn/vim-easy-align'
+    " Plugin 'rizzatti/dash.vim'
+    Plugin 'oblitum/rainbow'
+    " Plugin 'ludovicchabant/vim-gutentags'
+    " Plugin 'junegunn/vim-easy-align'
 " }
 
 " Snippets & AutoComplete {
-    Bundle 'SirVer/ultisnips'
-    Bundle 'honza/vim-snippets'
-    Bundle 'valloric/youcompleteme'
+    Plugin 'SirVer/ultisnips'
+    Plugin 'honza/vim-snippets'
+    Plugin 'valloric/youcompleteme'
 " }
 
 " Front end develep {
-    Bundle 'mattn/emmet-vim'
-    Bundle 'pangloss/vim-javascript'
-    " Bundle 'mxw/vim-jsx'
-    Bundle 'mattn/webapi-vim'
-    Bundle 'othree/javascript-libraries-syntax.vim'
-    Bundle 'posva/vim-vue'
-    Bundle 'hail2u/vim-css3-syntax'
-    Bundle 'gorodinskiy/vim-coloresque'
-    Bundle 'cakebaker/scss-syntax.vim'
-    " Bundle 'leafgarland/typescript-vim'
-    Bundle 'wavded/vim-stylus'
-    Bundle 'heavenshell/vim-jsdoc'
-    Bundle 'prettier/vim-prettier', {
+    Plugin 'mattn/emmet-vim'
+    Plugin 'pangloss/vim-javascript'
+    " Plugin 'mxw/vim-jsx'
+    Plugin 'mattn/webapi-vim'
+    Plugin 'othree/javascript-libraries-syntax.vim'
+    Plugin 'posva/vim-vue'
+    Plugin 'hail2u/vim-css3-syntax'
+    Plugin 'gorodinskiy/vim-coloresque'
+    Plugin 'cakebaker/scss-syntax.vim'
+    " Plugin 'leafgarland/typescript-vim'
+    " Plugin 'wavded/vim-stylus'
+    Plugin 'heavenshell/vim-jsdoc'
+    Plugin 'prettier/vim-prettier', {
 	  \ 'do': 'yarn install',
 	  \ 'branch': 'release/1.x',
 	  \ 'for': [
