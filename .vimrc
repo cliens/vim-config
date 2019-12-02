@@ -4,10 +4,11 @@ set nocompatible
     let mapleader=","
     syntax on
     set number
-    set shiftwidth=2
+    set shiftwidth=2 tabstop=2 expandtab
     set clipboard=unnamed
+    " set dir=$VIMTEMP
+    " set autoread
 " }
-
 
 " Mapping {
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -25,15 +26,15 @@ set nocompatible
     noremap <Right> \<Nop>
     noremap <Del> \<Nop>
     noremap <Bslash> \<Nop>
-    noremap <Esc> \<Nop>
+    " noremap <Esc> \<Nop>
     " Disable lowercase conversion of visiual mode to prevent misopration
     vnoremap u \<nop>
 " }
 
 " vim features {
     if has('persistent_undo')         "check if your vim version supports
-      set undodir=$HOME/.vim/undo     "directory where the undo files will be stored
       set undofile                    "turn on the feature
+      set undodir=$VIMHOME/undo     "directory where the undo files will be stored
     endif
 " }
 
@@ -49,12 +50,6 @@ filetype plugin indent on
 
 " Plugins config {
 
-    " syntastic
-    let g:syntastic_javascript_checkers = ['eslint']
-
-    " easymotion
-    map <Leader> <Plug>(easymotion-prefix)
-
     " nerdtree
     noremap <C-e> :NERDTreeToggle<CR>
     let NERDTreeNodeDelimiter = "\u00a0"
@@ -62,87 +57,51 @@ filetype plugin indent on
     " colorschemes
     colorscheme molokai_dark
 
-    " workspace
-    nnoremap <leader>s :ToggleWorkspace<cr>
-    let g:workspace_autosave_always = 1
-    let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+    " surround
+    "
 
-    " vim-vue
-    augroup file_vue
-        autocmd!
-        autocmd FileType vue syntax sync fromstart
-    augroup END
-
-   " ctrlp
+    " ctrlp
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = {
-		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-		\ 'file': '\v\.(exe|so|dll)$',
-		\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-		\ }
+	  \ 'dir':  '\v[\/]\.(git|hg|svn)\|node_modules$',
+	  \ 'file': '\v\.(exe|so|dll)$',
+	  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	  \ }
+
+    " airline
+    let g:airline#extensions#tabline#enabled = 0
 
     " mundo
-    " noremap <C-h> :MundoToggle<CR>
+    noremap <C-h> :MundoToggle<CR>
 
-    " if has("persistent_undo") " persistent undo
-      " set undofile
-      " set undodir=~/.vim/undo
-    " endif
+    " easymotion
+    map <Leader> <Plug>(easymotion-prefix)
 
-    " tagbar
-    nnoremap <leader>t :TagbarToggle<cr>
+    " multiple-cursors
+    let g:multi_cursor_next_key = '<C-n>'
+    let g:multi_cursor_prev_key = '<C-p>'
+    let g:multi_cursor_skip_key = '<C-x>'
+    let g:multi_cursor_quit_key = '<Esc>'
 
-    " Ack
-    let g:ackprg = 'ag --nogroup --nocolor --column'
-    nnoremap <leader>a :Ack!<CR>
-    nnoremap<leader>A :Ack!<Space>
+    " signature
+    " :SignatureToggle
+    
+    " searchindex
+    " g/ to display search index for the last search term at the current cursor position
 
-    " javascript-libraries-syntax
-    let g:used_javascript_libs = 'underscore,vue'
 
-    " emmet
-    let g:user_emmet_leader_key = '<C-y>'
+    " syntastic
+    let g:syntastic_javascript_checkers = ['eslint']
 
-    " youcomplete
-    let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-    let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-    let g:SuperTabDefaultCompletionType = '<C-n>'
-
-    " UltiSnips
-    let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-    let g:UltiSnipsExpandTrigger="<C-j>"
-    let g:UltiSnipsJumpForwardTrigger="<c-j>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-    "airblade/vim-gitgutter
-    set updatetime=100
-
-    " instant-markdown
-    "let g:instant_markdown_autostart = 0
-
-    "vim-prettier
-    nnoremap <leader>p :PrettierAsync<CR>
-    let g:prettier#config#semi = 'true'
-    let g:prettier#config#trailing_comma = 'none'
-    let g:prettier#config#bracket_spacing = 'true'
-
-    " vim-gutentags
-    " let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-    " let s:vim_tags = expand('~/.vim/tags')
-    " let g:gutentags_cache_dir = s:vim_tags
-    " if !isdirectory(s:vim_tags)
-      " silent! call mkdir(s:vim_tags, 'p')
-    " endif
-    " let g:gutentags_file_list_command = 'rg --files'
-
-    " jsdoc
-    let g:jsdoc_allow_input_prompt = 0
-    let g:jsdoc_input_description = 1
-    let g:jsdoc_enable_es6 = 1
-    nnoremap <leader>d :JsDoc<cr>
-
+    " workspace
+    nnoremap <leader>s :ToggleWorkspace<cr>
+    let g:workspace_autosave_always = 1
+    let g:workspace_autosave = 1
+    let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+    let g:workspace_persist_undo_history = 1
+    let g:workspace_undodir= $HOME . '/.vim/undo/'
 
     " nerdcommter
     let g:NERDSpaceDelims = 1
@@ -165,6 +124,89 @@ filetype plugin indent on
 	    let g:ft = ''
 	endif
     endfunction
+
+    " tabular
+    if exists(":Tabularize")
+      " nmap <Leader>a= :Tabularize /=<CR>
+      " vmap <Leader>a= :Tabularize /=<CR>
+      " nmap <Leader>a: :Tabularize /:\zs<CR>
+      " vmap <Leader>a: :Tabularize /:\zs<CR>
+    endif
+
+    " autoclose
+    "
+
+    " Ack
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+    nnoremap <leader>a :Ack!<CR>
+    nnoremap<leader>A :Ack!<Space>
+
+    " vim-vue
+    augroup file_vue
+        autocmd!
+        autocmd FileType vue syntax sync fromstart
+    augroup END
+
+    " tagbar
+    nnoremap <leader>t :TagbarToggle<cr>
+
+    " javascript-libraries-syntax
+    let g:used_javascript_libs = 'vue'
+
+    " emmet
+    let g:user_emmet_leader_key = '<C-c>'
+
+    " youcomplete
+    let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+    let g:ycm_key_list_stop_completion = ['<C-y>']
+    let g:ycm_key_invoke_completion = '<C-Space>'
+    let g:SuperTabDefaultCompletionType = '<C-n>'
+    let g:ycm_collect_identifiers_from_tags_files = 0
+    " required -> npm install -g vue-language-server
+    let g:ycm_language_server = [ {
+    \ 'name': 'vue',
+    \ 'filetypes': [ 'vue' ],
+    \ 'cmdline': [ 'vls'  ]
+    \ } ]
+    nnoremap <leader>gi :YcmCompleter GoTo<CR>
+    nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+
+    " UltiSnips
+    let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+    let g:UltiSnipsExpandTrigger="<C-j>"
+    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+    "airblade/vim-gitgutter
+    set updatetime=100
+
+    " instant-markdown
+    "let g:instant_markdown_autostart = 0
+
+    "vim-prettier
+    nnoremap <leader>p :PrettierAsync<CR>
+    let g:prettier#config#semi = 'false'
+    let g:prettier#config#trailing_comma = 'none'
+    let g:prettier#config#bracket_spacing = 'true'
+    let g:prettier#config#single_quote = 'true'
+
+    " vim-gutentags
+    " let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+    " let s:vim_tags = expand('~/.vim/tags')
+    " let g:gutentags_cache_dir = s:vim_tags
+    " if !isdirectory(s:vim_tags)
+      " silent! call mkdir(s:vim_tags, 'p')
+    " endif
+    " let g:gutentags_file_list_command = 'rg --files'
+
+    " jsdoc
+    let g:jsdoc_allow_input_prompt = 0
+    let g:jsdoc_input_description = 1
+    let g:jsdoc_enable_es6 = 1
+    nnoremap <leader>d :JsDoc<cr>
+
+
     " }
 
 
