@@ -17,9 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
     Plugin 'tpope/vim-surround'
     Plugin 'kien/ctrlp.vim'
     Plugin 'vim-airline/vim-airline'
-    Plugin 'simnalamburt/vim-mundo'
+    " Plugin 'simnalamburt/vim-mundo'
     Plugin 'easymotion/vim-easymotion'
-    Plugin 'terryma/vim-multiple-cursors'
+    " Plugin 'terryma/vim-multiple-cursors'
     Plugin 'kshenoy/vim-signature'
     Plugin 'google/vim-searchindex'
 " }
@@ -34,9 +34,9 @@ Plugin 'VundleVim/Vundle.vim'
     Plugin 'mileszs/ack.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'suan/vim-instant-markdown'
-    if executable('ctags')
-        Plugin 'majutsushi/tagbar'
-    endif
+    " if executable('ctags')
+        " Plugin 'majutsushi/tagbar'
+    " endif
     " Plugin 'rizzatti/dash.vim'
     Plugin 'oblitum/rainbow'
     " Plugin 'ludovicchabant/vim-gutentags'

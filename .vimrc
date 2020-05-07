@@ -6,8 +6,10 @@ set nocompatible
     set number
     set shiftwidth=2 tabstop=2 expandtab
     set clipboard=unnamed
-    " set dir=$VIMTEMP
+    " set hlsearch
+    set dir=$VIMTEMP
     " set autoread
+    set foldmethod=manual
 " }
 
 " Mapping {
@@ -65,8 +67,8 @@ filetype plugin indent on
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = {
-	  \ 'dir':  '\v[\/]\.(git|hg|svn)\|node_modules$',
-	  \ 'file': '\v\.(exe|so|dll)$',
+	  \ 'dir': 'node_modules\|DS_Store\|git|dist|build',
+	  \ 'file': '\v\.(exe|so|dll|swp|ico)$',
 	  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	  \ }
 
@@ -74,7 +76,7 @@ filetype plugin indent on
     let g:airline#extensions#tabline#enabled = 0
 
     " mundo
-    noremap <C-h> :MundoToggle<CR>
+    " noremap <C-h> :MundoToggle<CR>
 
     " easymotion
     map <Leader> <Plug>(easymotion-prefix)
@@ -96,7 +98,7 @@ filetype plugin indent on
     let g:syntastic_javascript_checkers = ['eslint']
 
     " workspace
-    nnoremap <leader>s :ToggleWorkspace<cr>
+    nnoremap <leader><leader>s :ToggleWorkspace<cr>
     let g:workspace_autosave_always = 1
     let g:workspace_autosave = 1
     let g:workspace_session_directory = $HOME . '/.vim/sessions/'
@@ -126,12 +128,12 @@ filetype plugin indent on
     endfunction
 
     " tabular
-    if exists(":Tabularize")
+    " if exists(":Tabularize")
       " nmap <Leader>a= :Tabularize /=<CR>
       " vmap <Leader>a= :Tabularize /=<CR>
       " nmap <Leader>a: :Tabularize /:\zs<CR>
       " vmap <Leader>a: :Tabularize /:\zs<CR>
-    endif
+    " endif
 
     " autoclose
     "
@@ -148,7 +150,7 @@ filetype plugin indent on
     augroup END
 
     " tagbar
-    nnoremap <leader>t :TagbarToggle<cr>
+    " nnoremap <leader>t :TagbarToggle<cr>
 
     " javascript-libraries-syntax
     let g:used_javascript_libs = 'vue'
